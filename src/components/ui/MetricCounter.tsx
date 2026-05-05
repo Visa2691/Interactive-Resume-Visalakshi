@@ -25,11 +25,11 @@ export default function MetricCounter({ value, suffix, label, sublabel }: Metric
   const n = useCounter(value, inView)
   return (
     <div ref={ref} className="flex flex-col">
-      <div className="font-display font-bold text-4xl sm:text-5xl text-white tabular-nums">
+      <div className="font-display font-bold text-4xl sm:text-5xl text-slate-900 dark:text-white tabular-nums">
         {n}{suffix}
       </div>
-      <div className="mt-1.5 font-semibold text-sm text-white/90">{label}</div>
-      <div className="text-xs text-white/50 mt-0.5 leading-relaxed">{sublabel}</div>
+      <div className="mt-1.5 font-semibold text-sm text-slate-700 dark:text-white/90">{label}</div>
+      <div className="text-xs text-slate-500 dark:text-white/50 mt-0.5 leading-relaxed">{sublabel}</div>
     </div>
   )
 }

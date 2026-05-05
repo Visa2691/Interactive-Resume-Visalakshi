@@ -127,7 +127,7 @@ export const projects: Project[] = [
     description: "AI-powered meal planning built to eliminate the 'what's for dinner?' chaos by generating toddler-friendly, nutritionally balanced weekly menus and shopping lists for a busy working parent.",
     features: ['Weekly plan tailored to toddler nutritional milestones', 'One-click grouped shopping list', 'Pantry inventory to reduce food waste', 'Cuisine variety and allergy settings'],
     tech: ['React', 'Claude AI API', 'Node.js', 'TypeScript'],
-    status: 'In Progress', github: 'https://github.com/Visa2691',
+    status: 'In Progress', github: 'https://github.com/Visa2691/SmartMeals',
   },
   {
     id: 2, title: 'FamilyTrip', subtitle: 'AI Travel Planning Checklist',
