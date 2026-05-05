@@ -9,7 +9,6 @@ import Hobbies from './components/sections/Hobbies'
 import Education from './components/sections/Education'
 import Contact from './components/sections/Contact'
 import EasterEggs, { EasterToasts, useEasterToast } from './components/ui/EasterEggs'
-import RocketLaunch from './components/ui/RocketLaunch'
 
 function Footer() {
   return (
@@ -41,7 +40,6 @@ function AppInner() {
       <Footer />
       <EasterEggs addToast={addToast} />
       <EasterToasts toasts={toasts} />
-      <RocketLaunch />
     </>
   )
 }

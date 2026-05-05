@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Mail, MapPin, ArrowDown } from "lucide-react"
 import { profile, metrics } from '../../data/resume'
 import MetricCounter from '../ui/MetricCounter'
@@ -12,6 +13,25 @@ interface HeroProps {
 export default function Hero({ addToast }: HeroProps) {
   const { theme } = useTheme()
   const dark = theme === 'dark'
+  const [rocketProgress, setRocketProgress] = useState(0)
+
+  useEffect(() => {
+    const hero = document.getElementById('hero')
+    if (!hero) return
+
+    const onScroll = () => {
+      const rect = hero.getBoundingClientRect()
+      // scrolled = how many px we've moved past the top of the hero
+      const scrolled = -rect.top
+      const travelDistance = rect.height * 0.8
+      const progress = Math.max(0, Math.min(1, scrolled / travelDistance))
+      setRocketProgress(progress)
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
     <section id="hero"
@@ -48,12 +68,45 @@ export default function Hero({ addToast }: HeroProps) {
 
         {/* Name — click 3× or 7× for easter eggs */}
         <h1
-          className="font-display font-extrabold leading-[0.95] tracking-tight mb-6 cursor-default"
+          className="font-display font-extrabold leading-[0.95] tracking-tight mb-4 cursor-default"
           style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', color: dark ? '#ffffff' : '#0f172a' }}
           onClick={() => onNameClick(addToast)}>
           {profile.firstName}<br />
           <span style={{ color: dark ? '#38bdf8' : '#0ea5e9' }}>{profile.lastName}</span>
         </h1>
+
+        {/* Rocket scroll track — under the name */}
+        <div className="relative mb-8 flex items-center gap-3">
+          {/* track line */}
+          <div
+            className="relative flex-1 h-px rounded-full overflow-visible"
+            style={{ backgroundColor: dark ? 'rgba(255,255,255,0.08)' : '#e2e8f0' }}>
+            {/* progress fill */}
+            <div
+              className="absolute inset-y-0 left-0 rounded-full transition-none"
+              style={{
+                width: `${rocketProgress * 100}%`,
+                backgroundColor: dark ? 'rgba(56,189,248,0.25)' : 'rgba(14,165,233,0.2)',
+              }}
+            />
+            {/* rocket emoji — rotated to point right */}
+            <span
+              className="absolute top-1/2 -translate-y-1/2 text-xl sm:text-2xl select-none leading-none transition-none"
+              style={{
+                left: `${rocketProgress * 100}%`,
+                transform: `translateX(-50%) translateY(-50%) rotate(90deg)`,
+                filter: rocketProgress > 0.98 ? 'brightness(1.5)' : 'none',
+              }}>
+              🚀
+            </span>
+            {/* moon at far right */}
+            <span
+              className="absolute right-0 top-1/2 -translate-y-1/2 text-base select-none leading-none"
+              style={{ opacity: 0.3 + rocketProgress * 0.7 }}>
+              🌙
+            </span>
+          </div>
+        </div>
 
         {/* Title + tagline */}
         <p style={{ color: dark ? '#94a3b8' : '#475569' }}
