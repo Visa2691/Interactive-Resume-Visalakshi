@@ -10,11 +10,10 @@ import Contact from './components/sections/Contact'
 
 function Footer() {
   return (
-    <footer className="py-8 px-6 text-center bg-white border-t border-slate-100">
-      <p className="text-slate-400 text-sm">
-        Designed & built by{' '}
-        <span className="text-violet-600 font-semibold">Visalakshi Saminathan</span>
-        {' '}· {new Date().getFullYear()}
+    <footer className="py-8 px-6 text-center bg-slate-950 border-t border-white/5">
+      <p className="text-slate-500 text-sm">
+        Designed & built by <span className="text-slate-300 font-medium">Visalakshi Saminathan</span>
+        <span className="text-slate-600"> · {new Date().getFullYear()}</span>
       </p>
     </footer>
   )
@@ -22,7 +21,7 @@ function Footer() {
 
 export default function App() {
   return (
-    <div className="min-h-screen">
+    <>
       <Navbar />
       <main>
         <Hero />
@@ -35,6 +34,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-    </div>
+    </>
   )
 }
