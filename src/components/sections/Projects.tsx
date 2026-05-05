@@ -4,16 +4,16 @@ import Section, { SectionHeader } from '../ui/SectionWrapper'
 import { projects } from '../../data/resume'
 
 const statusStyle: Record<string, string> = {
-  'In Progress': 'bg-amber-50 text-amber-700 border border-amber-200',
-  'Coming Soon': 'bg-slate-100 text-slate-600 border border-slate-200',
-  'Live':        'bg-emerald-50 text-emerald-700 border border-emerald-200',
+  'In Progress': 'bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-700',
+  'Coming Soon': 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-600',
+  'Live':        'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-700',
 }
 
 export default function Projects() {
   return (
-    <Section id="projects" className="bg-slate-50">
+    <Section id="projects" className="bg-slate-50 dark:bg-slate-950">
       <SectionHeader eyebrow="Projects" title="Personal projects"
-        subtitle="AI-powered tools I'm building to optimise life at home — because a data leader never stops solving problems." />
+        subtitle="AI-powered tools I'm building to optimise life at home, because a data leader never stops solving problems." />
       <div className="grid sm:grid-cols-2 gap-6">
         {projects.map((p, i) => (
           <motion.div key={p.id}
@@ -21,13 +21,12 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
-            className="bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-col overflow-hidden">
-            {/* Header */}
-            <div className="p-6 pb-4 border-b border-slate-100">
+            className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-md dark:hover:shadow-slate-900 transition-all duration-200 flex flex-col overflow-hidden">
+            <div className="p-6 pb-4 border-b border-slate-100 dark:border-slate-700">
               <div className="flex items-start justify-between gap-3 mb-1">
                 <div>
-                  <h3 className="font-display font-bold text-slate-900 text-lg">{p.title}</h3>
-                  <p className="text-slate-500 text-sm">{p.subtitle}</p>
+                  <h3 className="font-display font-bold text-slate-900 dark:text-white text-lg">{p.title}</h3>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm">{p.subtitle}</p>
                 </div>
                 <span className={`shrink-0 px-2.5 py-1 text-xs font-semibold rounded-full ${statusStyle[p.status]}`}>
                   {p.status}
@@ -35,12 +34,11 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* Body */}
             <div className="p-6 pt-4 flex-1 flex flex-col">
-              <p className="text-slate-600 text-sm leading-relaxed mb-5">{p.description}</p>
+              <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-5">{p.description}</p>
               <ul className="space-y-1.5 mb-6 flex-1">
                 {p.features.map((f, fi) => (
-                  <li key={fi} className="flex items-start gap-2 text-sm text-slate-600">
+                  <li key={fi} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
                     <span className="mt-1.5 w-1 h-1 rounded-full bg-sky-400 shrink-0" />
                     {f}
                   </li>
@@ -48,7 +46,7 @@ export default function Projects() {
               </ul>
               <div className="flex flex-wrap gap-1.5 mb-5">
                 {p.tech.map(t => (
-                  <span key={t} className="px-2.5 py-1 text-xs font-mono bg-slate-100 text-slate-600 rounded-md">{t}</span>
+                  <span key={t} className="px-2.5 py-1 text-xs font-mono bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-md">{t}</span>
                 ))}
               </div>
               <a href={p.github} target="_blank" rel="noopener noreferrer"

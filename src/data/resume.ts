@@ -15,9 +15,9 @@ export const profile = {
   phone: '0405 594 760',
   linkedin: 'https://linkedin.com/in/visalakshi-saminathan',
   github: 'https://github.com/Visa2691',
-  tagline: 'I build analytics functions from zero — the team, the stack, the governance, and the strategy.',
+  tagline: 'I build analytics functions from zero: the team, the stack, the governance, and the strategy.',
   summary: [
-    'Data and analytics leader with over 10 years of continuous growth across Tier-1 banking, digital banking, and technology. A builder at heart — recognised for creating high-performing analytics teams from the ground up, developing data products that directly shape business strategy, and driving measurable commercial outcomes through people-first leadership.',
+    'Data and analytics leader with over 10 years of continuous growth across Tier-1 banking, digital banking, and technology. A builder at heart, recognised for creating high-performing analytics teams from the ground up, developing data products that directly shape business strategy, and driving measurable commercial outcomes through people-first leadership.',
     'Technically fluent across the modern data stack and cloud platforms, with a track record of designing enterprise-grade solutions that scale. Combines deep product thinking with hands-on technical capability and a natural ability to bridge engineering teams with executive stakeholders.',
   ],
 }
@@ -35,11 +35,11 @@ export const experience: Role[] = [
     period: 'Feb 2023 – Present', current: true, accent: 'sky',
     summary: "Appointed to build UBank's analytics function following the bank's post-merger scale-up. Accountable for enterprise data strategy, squad leadership, BI modernisation, and C-suite intelligence.",
     achievements: [
-      'Built the analytics function from zero — defined squad operating rhythms, coding standards, QA protocols, and governance frameworks now embedded as standard practice.',
+      'Built the analytics function from zero: defined squad operating rhythms, coding standards, QA protocols, and governance frameworks now embedded as standard practice.',
       'Architected enterprise data strategy migrating legacy pipelines to a Modern Data Stack (Databricks, Power BI, SQL), reducing time-to-insight by over 60%.',
       'Designed automated data products giving executives real-time visibility across risk exposure, customer acquisition trends, and business performance.',
       'Led automation initiatives eliminating manual reporting bottlenecks and materially improving SLA turnaround times across multiple business units.',
-      'Championed pragmatic AI integration — deploying AI-as-a-Service tooling with ethical use standards and regulatory alignment.',
+      'Championed pragmatic AI integration, deploying AI-as-a-Service tooling with ethical use standards and regulatory alignment.',
     ],
     tech: ['Databricks', 'Power BI', 'SQL', 'Python', 'AWS', 'Power Platform', 'Power Automate'],
     stat: { value: '60%', label: 'faster time-to-insight' },
@@ -124,14 +124,14 @@ export const education: Degree[] = [
 export const projects: Project[] = [
   {
     id: 1, title: 'SmartMeals', subtitle: 'AI Family Meal Planner',
-    description: "AI-powered meal planning built to eliminate the 'what's for dinner?' chaos — generating toddler-friendly, nutritionally balanced weekly menus and shopping lists for a busy working parent.",
+    description: "AI-powered meal planning built to eliminate the 'what's for dinner?' chaos by generating toddler-friendly, nutritionally balanced weekly menus and shopping lists for a busy working parent.",
     features: ['Weekly plan tailored to toddler nutritional milestones', 'One-click grouped shopping list', 'Pantry inventory to reduce food waste', 'Cuisine variety and allergy settings'],
     tech: ['React', 'Claude AI API', 'Node.js', 'TypeScript'],
     status: 'In Progress', github: 'https://github.com/Visa2691',
   },
   {
     id: 2, title: 'FamilyTrip', subtitle: 'AI Travel Planning Checklist',
-    description: 'AI-orchestrated travel planner for families with young children — packing lists, day-by-day itineraries, toddler-essentials checklists, and restaurant shortlists.',
+    description: 'AI-orchestrated travel planner for families with young children: packing lists, day-by-day itineraries, toddler-essentials checklists, and restaurant shortlists.',
     features: ['Destination-aware packing list', 'Toddler essentials and safety kit', 'Itinerary with nap windows built in', 'Family-friendly restaurant finder'],
     tech: ['React', 'Claude AI API', 'TypeScript', 'Tailwind CSS'],
     status: 'Coming Soon', github: 'https://github.com/Visa2691',
@@ -139,9 +139,9 @@ export const projects: Project[] = [
 ]
 
 export const hobbies: Hobby[] = [
-  { name: 'Pilates',          icon: '◎', description: 'Reformer Pilates 3× a week. My anchor for mental clarity — the one hour that is entirely mine.' },
+  { name: 'Pilates',          icon: '◎', description: 'Reformer Pilates 3× a week. My anchor for mental clarity, the one hour that is entirely mine.' },
   { name: 'Strength Training',icon: '△', description: 'Progressively overloading and chasing PRs. The same data-driven mindset, applied to fitness.' },
-  { name: 'Gardening',        icon: '◈', description: 'Growing herbs, vegetables, and flowers. A slow, patient practice — the perfect counterweight to a fast career.' },
+  { name: 'Gardening',        icon: '◈', description: 'Growing herbs, vegetables, and flowers. A slow, patient practice and the perfect counterweight to a fast career.' },
   { name: 'Painting',         icon: '◻', description: 'Watercolours and acrylic on weekends. A creative outlet that keeps the right brain active.' },
   { name: 'Carnatic Music',   icon: '♩', description: 'A lifelong classical music practice. Taught me the value of discipline, rhythm, and listening deeply.' },
 ]

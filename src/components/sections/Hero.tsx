@@ -1,14 +1,15 @@
 import { Mail, MapPin, ArrowDown } from "lucide-react"
 import { profile, metrics } from '../../data/resume'
 import MetricCounter from '../ui/MetricCounter'
+import Constellation from '../ui/Constellation'
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen bg-slate-950 flex flex-col">
-      {/* Subtle grid overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:64px_64px]" />
-      {/* Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-sky-500/10 blur-[120px] rounded-full" />
+    <section id="hero" className="relative min-h-screen bg-slate-950 flex flex-col overflow-hidden">
+      {/* Constellation background */}
+      <Constellation />
+      {/* Subtle glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-sky-500/8 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full px-6 pt-24 pb-16">
         {/* Status pill */}
@@ -63,7 +64,7 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Divider */}
+        {/* Metrics */}
         <div className="border-t border-white/5 pt-10">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12">
             {metrics.map(m => <MetricCounter key={m.label} {...m} />)}
