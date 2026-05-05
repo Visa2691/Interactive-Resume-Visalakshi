@@ -37,9 +37,9 @@ export default function Contact() {
                 <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
                   <Mail size={16} className="text-sky-400" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs text-slate-400 mb-0.5">Email</p>
-                  <p className="text-white text-sm font-medium truncate">{profile.email}</p>
+                  <p className="text-white text-xs font-mono break-all leading-relaxed">{profile.email}</p>
                 </div>
               </a>
 

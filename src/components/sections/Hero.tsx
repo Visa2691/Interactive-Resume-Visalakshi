@@ -3,8 +3,13 @@ import { profile, metrics } from '../../data/resume'
 import MetricCounter from '../ui/MetricCounter'
 import Constellation from '../ui/Constellation'
 import { useTheme } from '../../context/ThemeContext'
+import { onNameClick } from '../ui/EasterEggs'
 
-export default function Hero() {
+interface HeroProps {
+  addToast: (msg: string, emoji: string, color: string) => void
+}
+
+export default function Hero({ addToast }: HeroProps) {
   const { theme } = useTheme()
   const dark = theme === 'dark'
 
@@ -41,10 +46,11 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Name */}
+        {/* Name — click 3× or 7× for easter eggs */}
         <h1
-          className="font-display font-extrabold leading-[0.95] tracking-tight mb-6"
-          style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', color: dark ? '#ffffff' : '#0f172a' }}>
+          className="font-display font-extrabold leading-[0.95] tracking-tight mb-6 cursor-default"
+          style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', color: dark ? '#ffffff' : '#0f172a' }}
+          onClick={() => onNameClick(addToast)}>
           {profile.firstName}<br />
           <span style={{ color: dark ? '#38bdf8' : '#0ea5e9' }}>{profile.lastName}</span>
         </h1>

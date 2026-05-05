@@ -8,10 +8,11 @@ import Projects from './components/sections/Projects'
 import Hobbies from './components/sections/Hobbies'
 import Education from './components/sections/Education'
 import Contact from './components/sections/Contact'
+import EasterEggs, { EasterToasts, useEasterToast } from './components/ui/EasterEggs'
 
 function Footer() {
   return (
-    <footer className="py-8 px-6 text-center bg-slate-950 border-t border-white/5">
+    <footer className="py-8 px-6 text-center bg-slate-950 border-t border-white/5 cursor-default select-none">
       <p className="text-slate-500 text-sm">
         Designed & built by <span className="text-slate-300 font-medium">Visalakshi Saminathan</span>
         <span className="text-slate-600"> · {new Date().getFullYear()}</span>
@@ -20,12 +21,14 @@ function Footer() {
   )
 }
 
-export default function App() {
+function AppInner() {
+  const { toasts, addToast } = useEasterToast()
+
   return (
-    <ThemeProvider>
+    <>
       <Navbar />
       <main>
-        <Hero />
+        <Hero addToast={addToast} />
         <About />
         <Experience />
         <Skills />
@@ -35,6 +38,16 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <EasterEggs addToast={addToast} />
+      <EasterToasts toasts={toasts} />
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <AppInner />
     </ThemeProvider>
   )
 }

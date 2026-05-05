@@ -30,7 +30,7 @@ function RoleCard({ role, index }: { role: Role; index: number }) {
 
       <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors overflow-hidden shadow-sm">
         <button onClick={() => setOpen(!open)}
-          className="w-full text-left p-5 sm:p-6 flex items-start gap-4 group"
+          className="w-full text-left p-5 sm:p-6 flex items-center gap-4 group"
           aria-expanded={open}>
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-center gap-2 mb-0.5">
@@ -50,7 +50,7 @@ function RoleCard({ role, index }: { role: Role; index: number }) {
             <div className="text-xs mt-0.5 opacity-80">{role.stat.label}</div>
           </div>
 
-          <ChevronDown size={18} className={`shrink-0 mt-1 text-slate-400 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+          <ChevronDown size={18} className={`shrink-0 text-slate-400 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
         </button>
 
         <AnimatePresence initial={false}>
