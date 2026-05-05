@@ -118,7 +118,7 @@ export const certifications: Cert[] = [
 
 export const education: Degree[] = [
   { degree: 'Master of Information Technology', major: 'Software Engineering', institution: 'The University of Sydney', period: '2015 – 2017', detail: 'GPA 74.02%' },
-  { degree: 'Master of IT Management', major: 'Dual-degree program', institution: 'The University of Sydney', period: '2015 – 2017' },
+  { degree: 'Master of Information Technology Management', major: 'Software Engineering Management', institution: 'The University of Sydney', period: '2015 – 2017' },
 ]
 
 export const projects: Project[] = [
