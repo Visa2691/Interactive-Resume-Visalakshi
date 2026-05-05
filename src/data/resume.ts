@@ -13,7 +13,7 @@ export const profile = {
   location: 'Sydney, NSW, Australia',
   email: 'visalakshisaminathan26@gmail.com',
   phone: '0405 594 760',
-  linkedin: 'https://linkedin.com/in/visalakshi-saminathan',
+  linkedin: 'https://www.linkedin.com/in/visalakshi/',
   github: 'https://github.com/Visa2691',
   tagline: 'I build analytics functions from zero: the team, the stack, the governance, and the strategy.',
   summary: [

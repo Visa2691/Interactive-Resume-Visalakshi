@@ -50,7 +50,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs text-slate-400 mb-0.5">LinkedIn</p>
-                  <p className="text-white text-sm font-medium">visalakshi-saminathan</p>
+                  <p className="text-white text-sm font-medium">visalakshi</p>
                 </div>
               </a>
 
